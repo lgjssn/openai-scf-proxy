@@ -84,3 +84,17 @@ cd openai-scf-proxy
 npm install
 npm run start
 ```
+##自托管进程后台运行：
+使用pm2：pm2是一个流行的进程管理器，可以让您轻松地管理和监视进程。
+
+使用以下命令安装pm2：
+npm install pm2 -g
+
+然后，使用以下命令启动 "npm run start" 命令：
+pm2 start npm -- start
+
+这将使用pm2启动 "npm run start" 命令，并在后台运行它。如果您希望该进程一直保持运行状态，即使您关闭了终端或断开了与服务器的连接，您可以使用以下命令：
+
+pm2 startup
+
+该命令将自动为您设置pm2以在系统启动时启动，并保持所有进程运行状态。
